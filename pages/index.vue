@@ -1,6 +1,37 @@
 <template>
   <v-app>
-    <top-app-bar />
+    <top-app-bar
+      :menus="menus"
+    />
+
+    <v-img
+      dark
+      src="https://picsum.photos/id/20/1920/1080?blur=5"
+      gradient="to top right, rgba(19,84,122,.6), rgba(128,208,199,.9)"
+      :height="imgHeight"
+    >
+      <v-row
+        align="center"
+        justify="center"
+        :style="{ height: `${imgHeight}px` }"
+      >
+        <v-col
+          cols="12"
+          class="text-center"
+        >
+          <h1 class="display-1 mb-4">
+            未来を作ろう。ワクワクしよう。
+          </h1>
+          <h4
+            class="subheading"
+            :style="{ letterSpacing: '10px' }"
+          >
+            中小企業に特化した事業計画策定ツール
+          </h4>
+        </v-col>
+      </v-row>
+    </v-img>
+
     <v-sheet>
       <v-container
         fluid
@@ -10,6 +41,20 @@
           v-for="(menu, i) in menus"
           :key="`menu-${i}`"
         >
+
+          <v-col
+            cols="12"
+          >
+            <v-card flat>
+              <v-card-title class="justify-center display-1">
+                {{ $t(`menus.${menu.title}`) }}
+              </v-card-title>
+              <v-card-text class="text-center">
+                {{ menu.subtitle }}
+              </v-card-text>
+            </v-card>
+          </v-col>
+          
           <v-col cols="12">
             <div :is="`top-${menu.title}`" />
           </v-col>
@@ -21,24 +66,25 @@
 </template>
 
 <script>
-import topAbout from '~/components/top/TopAbout'
-import topProduct from '~/components/top/TopProduct'
-import topPrice from '~/components/top/TopPrice'
-import topContact from '~/components/top/TopContact'
-import topCompany from '~/components/top/TopCompany'
+import TopAbout from '~/components/top/TopAbout'
+import TopProduct from '~/components/top/TopProduct'
+import TopPrice from '~/components/top/TopPrice'
+import TopContact from '~/components/top/TopContact'
+import TopCompany from '~/components/top/TopCompany'
 import AppFooter from '~/components/AppFooter'
 
 export default {
   components: {
-    topAbout,
-    topProduct,
-    topPrice,
-    topContact,
-    topCompany,
+    TopAbout,
+    TopProduct,
+    TopPrice,
+    TopContact,
+    TopCompany,
     AppFooter
   },
   data () {
     return {
+      imgHeight: 500,
       menus: [
         { title: 'about', subtitle: 'このサイトはブログ"独学プログラマ"で公開されているチュートリアルのデモアプリケーションです' },
         { title: 'product', subtitle: '他にはない優れた機能の数々' },

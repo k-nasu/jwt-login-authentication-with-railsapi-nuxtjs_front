@@ -2,8 +2,7 @@
   <div>
     <v-footer
       absolute
-      dark
-      color="red"
+      style="background: $base-color;"
     >
       AppFooter.vue
     </v-footer>

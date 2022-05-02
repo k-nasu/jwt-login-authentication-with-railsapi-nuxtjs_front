@@ -1,7 +1,14 @@
 // custom変数 => https://vuetifyjs.com/en/customization/sass-variables/#sass-variables
 $material-light: (
-  'background': #f6f6f4
+  'background': #F8F9FA
 );
+
+$main-color: #304FFE;
+$sub-color: #18FFFF;
+$accent-color: #311B92;
+$base-color: #F8F9FA;
+// $warning-color: #B20D30;
+// $success-color: #F7CB15;
 
 $grid-breakpoints: (
   'ipad': 768px,
