@@ -1,7 +1,7 @@
 <template>
   <v-avatar
     size="34"
-    class="my-app-log"
+    class="my-app-log mainColor"
   >
     <span 
       class="white--text text-subtitle-2"
@@ -20,6 +20,5 @@ export default {
 .my-app-log {
   margin-right: 8px;
   cursor: pointer;
-  background: $main-color;
 }
 </style>

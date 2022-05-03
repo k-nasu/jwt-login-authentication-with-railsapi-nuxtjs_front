@@ -3,7 +3,9 @@ $material-light: (
   'background': #F8F9FA
 );
 
-$main-color: #304FFE;
+$main-color: (
+  'background': #304FFE
+);
 $sub-color: #18FFFF;
 $accent-color: #311B92;
 $base-color: #F8F9FA;
