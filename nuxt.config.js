@@ -79,7 +79,8 @@ export default {
           warning: 'FEB65E',
           error: 'FB8678',
           background: 'f6f6f4',
-          mainColor: '304FFE'
+          mainColor: '304FFE',
+          subColor: '18FFFF'
         }
       }
     }
