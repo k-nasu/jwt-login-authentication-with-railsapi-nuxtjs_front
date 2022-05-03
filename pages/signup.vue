@@ -2,6 +2,7 @@
   <user-form-card>
     <template v-slot:user-form-card-content>
       <v-form
+        ref="form"
         v-model="isValid"
       >
         <user-form-name
@@ -16,10 +17,12 @@
           set-validation
         />
         <v-btn
-          :disabled="!isValid"
+          :disabled="!isValid || loading"
+          :loading="loading"
           block
           color="mainColor"
           class="white--text"
+          @click="signup"
         >
           登録する
         </v-btn>
@@ -43,7 +46,23 @@ export default {
   data () {
     return {
       isValid: false,
+      loading: false,
       params: { user: { name: '', email: '', password: '' } }
+    }
+  },
+  methods: {
+    signup() {
+      this.loading = true
+      setTimeout(() => {
+        this.formReset()
+        this.loading = false
+      }, 1500)
+    },
+    formReset() {
+      this.$refs.form.reset()
+      for (const key in this.params.user) {
+        this.params.user[key] = ''
+      }
     }
   }
 }
