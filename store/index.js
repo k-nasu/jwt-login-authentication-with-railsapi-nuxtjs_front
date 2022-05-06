@@ -1,6 +1,13 @@
+const redirectPath = 'projects'
+
 export const state = () => ({
   styles: {
     topAppBarHeight: 56
+  },
+  loggedIn: {
+    redirectPath: {
+      name: redirectPath
+    }
   }
 })
 

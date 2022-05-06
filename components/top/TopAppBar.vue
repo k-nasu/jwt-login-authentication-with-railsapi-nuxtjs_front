@@ -29,8 +29,8 @@
       </v-btn>
     </v-toolbar-items>
 
-    <app-signup-button />
-    <app-login-button />
+    <before-login-app-signup-button />
+    <before-login-app-login-button />
 
     <v-menu
       bottom

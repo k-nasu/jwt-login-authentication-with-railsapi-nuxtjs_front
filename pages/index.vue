@@ -67,22 +67,7 @@
 </template>
 
 <script>
-import TopAbout from '~/components/top/TopAbout'
-import TopProduct from '~/components/top/TopProduct'
-import TopPrice from '~/components/top/TopPrice'
-import TopContact from '~/components/top/TopContact'
-import TopCompany from '~/components/top/TopCompany'
-import AppFooter from '~/components/AppFooter'
-
 export default {
-  components: {
-    TopAbout,
-    TopProduct,
-    TopPrice,
-    TopContact,
-    TopCompany,
-    AppFooter
-  },
   data () {
     return {
       imgHeight: 500,

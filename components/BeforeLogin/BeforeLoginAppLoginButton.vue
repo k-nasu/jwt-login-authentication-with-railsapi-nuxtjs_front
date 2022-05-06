@@ -5,7 +5,7 @@
     color="$sub-color"
     to="/login"
   >
-    {{ $t('pages.login' )}}
+    {{ $injected.pageTitle('login' )}}
   </v-btn>
 </template>
 

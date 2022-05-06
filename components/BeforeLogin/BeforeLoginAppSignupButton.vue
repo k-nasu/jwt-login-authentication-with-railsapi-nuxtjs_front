@@ -5,7 +5,7 @@
     color="mainColor"
     to="/signup"
   >
-    {{ $t('pages.signup' )}}
+    {{ $injected.pageTitle('signup' )}}
   </v-btn>
 </template>
 
