@@ -32,9 +32,9 @@
 </template>
 
 <script>
-import UserFormName from '~/components/atom/UserFormName.vue'
-import UserFormEmail from '~/components/atom/UserFormEmail.vue'
-import UserFormPassword from '~/components/atom/UserFormPassword.vue'
+import UserFormName from '~/components/User/UserFormName.vue'
+import UserFormEmail from '~/components/User/UserFormEmail.vue'
+import UserFormPassword from '~/components/User/UserFormPassword.vue'
 
 export default {
   components: {
