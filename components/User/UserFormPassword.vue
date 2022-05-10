@@ -24,7 +24,7 @@ export default {
     },
     setValidation: {
       type: Boolean,
-      default: ''
+      default: false
     }
   },
   data () {
