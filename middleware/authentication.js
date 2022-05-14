@@ -13,7 +13,9 @@ export default async ({ $auth, store, route, redirect }) => {
     const msg = 'ログインしてください'
     const color = 'info'
 
-    console.log(msg, color)
+    store.dispatch('getToast', { msg, color })
+
+    store.dispatch('getRememberPath', route)
 
     return redirect('/login')
   }

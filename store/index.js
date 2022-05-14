@@ -7,7 +7,17 @@ export const state = () => ({
   loggedIn: {
     homePath: {
       name: homePath
-    }
+    },
+    rememberPath: {
+      name: homePath,
+      params: {}
+    },
+    // ログイン後アクセス不可ルート一覧
+    redirectPath: [
+      'index',
+      'signup',
+      'login'
+    ]
   },
   project: {
     current: null,
@@ -20,6 +30,11 @@ export const state = () => ({
     token: null,
     expires: 0,
     payload: {}
+  },
+  toast: {
+    msg: null,
+    color: 'error',
+    timeout: 4000
   }
 })
 
@@ -43,6 +58,12 @@ export const mutations = {
   },
   setAuthPayload (state, payload) {
     state.auth.payload = payload
+  },
+  setToast (state, payload) {
+    state.toast = payload
+  },
+  setRememberPath (state, payload) {
+    state.loggedIn.rememberPath = payload
   }
 }
 
@@ -72,5 +93,19 @@ export const actions = {
   getAuthPayload ({ commit }, jwtPayload) {
     jwtPayload = jwtPayload || {}
     commit('setAuthPayload', jwtPayload)
+  },
+  getToast ({ commit}, {msg, color, timeout}) {
+    color = color || 'error'
+    timeout = timeout || 4000
+    commit('setToast', {msg, color, timeout})
+  },
+  // ログイン前ユーザーがアクセスしたルートを記憶する
+  getRememberPath({ state, commit}, { name, params }) {
+    // ログイン前パスが渡された場合は、loggedIn.homePathに書き換わる
+    if (state.loggedIn.redirectPath.includes(name)) {
+      name = state.loggedIn.homePath.name
+    }
+    params = params || {}
+    commit('setRememberPath', { name, params })
   }
 }
