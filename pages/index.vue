@@ -68,6 +68,7 @@
 
 <script>
 export default {
+  middleware: ['logged-in-redirect'],
   data () {
     return {
       imgHeight: 500,
