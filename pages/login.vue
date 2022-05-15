@@ -55,7 +55,7 @@ export default {
     return {
       isValid: false,
       loading: false,
-      params: { auth: { email: 'user0@example.com', password: 'password' } },
+      params: { auth: { email: '', password: '' } },
       redirectPath: $store.state.loggedIn.rememberPath,
       loggedInHomePath: $store.state.loggedIn.homePath
     }
@@ -77,11 +77,12 @@ export default {
       //記憶ルートを元に戻す
       this.$store.dispatch('getRememberPath', this.loggedInHomePath)
     },
-    authFailure ({ response }) {
+    authFailure (response) {
       if (response && response.status === 404) {
         const msg = 'ユーザーが見つかりません'
         return this.$store.dispatch('getToast', { msg, color: 'info', timeout: 5000 })
-      } 
+      }
+      return this.$injected.apiErrorHandler(response)
     }
   }
 }

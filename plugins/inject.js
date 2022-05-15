@@ -1,6 +1,7 @@
 class Inject {
   constructor (ctx) {
     this.app = ctx.app
+    this.error = ctx.error
   }
 
   pageTitle (routeName) {
@@ -19,8 +20,15 @@ class Inject {
   projectLinkTo (id, name = 'project-id-dashboard') {
     return { name, params: { id } }
   }
+
+  // apiエラーハンドラー
+  apiErrorHandler (response) {
+    const statusCode = (response) ? response.status : 500
+    const message = (response) ? response.statusText : 'Network Error'
+    return this.error({ statusCode, message })
+  }
 }
 
-export default ({ app }, inject) => {
+export default ({ app, error }, inject) => {
   inject('injected', new Inject({ app }))
 }
