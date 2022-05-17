@@ -6,7 +6,7 @@
     :clipped-left="clippedLeft"
     color="white"
   >
-    <slot name="navigation-toggle-button" />
+    <!-- <slot name="navigation-toggle-button" /> -->
     <nuxt-link
       :to="homePath"
       class="text-decoration-none"

@@ -1,10 +1,9 @@
 <template>
   <div>
-    <h1>プロジェクト設定</h1>
+    <h1>Wiki</h1>
     <h3>It's on the Road Map!!</h3>
     <v-container>
-      <h5>機能　案</h5>
-      <p>- </p>
+      <p>- wysiwygを使用して、リッチテキストエディタを実装する</p>
     </v-container>
   </div>
 </template>

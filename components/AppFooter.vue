@@ -5,7 +5,7 @@
     <v-footer
       absolute
       dark
-      color="black"
+      color="mainColor"
       :height="height"
     >
       <v-col

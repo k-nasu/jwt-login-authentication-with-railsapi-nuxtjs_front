@@ -23,6 +23,10 @@ export const state = () => ({
     current: null,
     list: []
   },
+  task: {
+    current: null,
+    list: []
+  },
   user: {
     current: null
   },
@@ -41,6 +45,9 @@ export const state = () => ({
 export const getters = {}
 
 export const mutations = {
+  setTaskList (state, payload) {
+    state.task.list = payload
+  },
   setProjectList (state, payload) {
     state.project.list = payload
   },
@@ -68,6 +75,10 @@ export const mutations = {
 }
 
 export const actions = {
+  getTaskList ({ commit }, tasks) {
+    tasks = tasks || []
+    commit('setTaskList', tasks)
+  },
   getProjectList ({ commit }, projects) {
     projects = projects || []
     commit('setProjectList', projects)

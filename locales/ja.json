@@ -21,10 +21,11 @@
     "project": {
       "id": {
         "dashboard": "ダッシュボード",
-        "layouts": "レイアウト",
-        "pages": "ページ",
+        "kanban": "カンバンボード",
+        "gantt": "ガントチャート",
+        "wiki": "wiki",
         "components": "コンポーネント",
-        "settings": "設定",
+        "settings": "プロジェクト設定",
         "help": "ヘルプ"
       }
     }

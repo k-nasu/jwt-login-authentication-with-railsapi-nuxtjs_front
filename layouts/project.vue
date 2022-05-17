@@ -1,14 +1,14 @@
 <template>
   <v-app>
     <!-- tool bar -->
-    <logged-in-app-bar
+    <!-- <logged-in-app-bar
       #navigation-toggle-button
       clippedLeft
     >
         <v-app-bar-nav-icon
           @click="drawer = !drawer"
         />
-    </logged-in-app-bar>
+    </logged-in-app-bar> -->
 
     <!-- navigation drawer -->
     <project-navigation-drawer
@@ -16,7 +16,9 @@
     />
     
     <!-- main content -->
-    <v-main>
+    <v-main
+      class="pa-0"
+    >
       <nuxt />
     </v-main>
   </v-app>
@@ -27,7 +29,7 @@ export default {
   middleware: ['authentication', 'get-project-list', 'get-current-project'],
   data () {
     return {
-      drawer: false
+      drawer: null
     }
   }
 }

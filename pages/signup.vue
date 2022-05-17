@@ -48,23 +48,42 @@ export default {
     return {
       isValid: false,
       loading: false,
-      params: { user: { name: '', email: '', password: '' } }
+      params: { user: { name: '', email: '', password: '' } },
+      msg: ''
     }
   },
   methods: {
-    signup() {
+    async signup() {
       this.loading = true
-      setTimeout(() => {
-        this.formReset()
+      if (this.isValid) {
+        await this.$axios.$post('/api/v1/auth_token', this.params)
+          .then(response => this.signupSuccessful(response))
+          .catch(error => this.signupFailure(error))
+      }
+      // setTimeout(() => {
+      //   this.formReset()
         this.loading = false
-      }, 1500)
+      // }, 1500)
+    },
+    signupSuccessful (response) {
+      this.$router.push('/login')
+
+      msg = '会員登録が成功しました'
+      return this.$store.dispatch('getToast', { msg, color: 'info', timeout: 5000 })
+    },
+    signupFailure (error) {
+      if (response && response.status === 404) {
+        msg = '会員登録に失敗しました'
+        return this.$store.dispatch('getToast', { msg, color: 'danger', timeout: 5000 })
+      }
+      return this.$injected.apiErrorHandler(response)
     },
     formReset() {
       this.$refs.form.reset()
       for (const key in this.params.user) {
         this.params.user[key] = ''
       }
-    }
+    },
   }
 }
 </script>

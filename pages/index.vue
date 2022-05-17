@@ -5,7 +5,8 @@
       :img-height="imgHeight"
     />
 
-    <v-img
+
+    <!-- <v-img
       id="scroll-top"
       dark
       src="https://picsum.photos/id/48/5184/3456?blur=5"
@@ -61,7 +62,7 @@
           </v-col>
         </v-row>
       </v-container>
-    </v-sheet>
+    </v-sheet> -->
     <app-footer />
   </v-app>
 </template>

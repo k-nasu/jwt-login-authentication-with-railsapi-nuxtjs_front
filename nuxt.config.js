@@ -91,7 +91,9 @@ export default {
           error: 'FB8678',
           background: 'f6f6f4',
           mainColor: '304FFE',
-          subColor: '18FFFF'
+          subColor: '18FFFF',
+          accentColor: '311B92',
+          baseColor: 'F8F9FA'
         }
       }
     }

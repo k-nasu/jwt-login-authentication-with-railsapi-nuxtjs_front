@@ -1,3 +1,4 @@
+
 <template>
   <v-menu
     app
@@ -11,11 +12,11 @@
         v-on="on"
       >
         <v-icon>
-          mdi-account-circle
+          mdi-magnify
         </v-icon>
       </v-btn>
     </template>
-    <v-list>
+    <!-- <v-list>
       <template v-for="(menu, i) in menus">
         <v-divider
           v-if="menu.divider"
@@ -39,7 +40,7 @@
           </v-list-item-title>
         </v-list-item>
       </template>
-    </v-list>
+    </v-list> -->
   </v-menu>
 </template>
 

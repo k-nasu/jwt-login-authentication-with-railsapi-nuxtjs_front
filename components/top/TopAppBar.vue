@@ -15,7 +15,7 @@
 
     <v-spacer />
 
-    <v-toolbar-items
+    <!-- <v-toolbar-items
       class="ml-2 hidden-ipad-and-down"
     >
       <v-btn
@@ -27,7 +27,7 @@
       >
         {{ $t(`menus.${menu.title}`) }}
       </v-btn>
-    </v-toolbar-items>
+    </v-toolbar-items> -->
 
     <before-login-app-signup-button />
     <before-login-app-login-button />

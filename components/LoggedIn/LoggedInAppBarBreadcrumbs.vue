@@ -1,7 +1,7 @@
 <template>
   <v-breadcrumbs
     :items="items"
-    class="display-block text-truncate"
+    class="d-block text-truncate"
   >
     <template
       v-slot:item="{ item }"
@@ -30,6 +30,7 @@ export default {
   computed: {
     items () {
       const currentRouteName = this.$route.name
+
       const items = [
         { text: this.$injected.pageTitle(currentRouteName) }
       ]

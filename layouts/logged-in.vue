@@ -1,10 +1,13 @@
 <template>
   <v-app>
-    <logged-in-app-bar />
-    <v-main>
+    <project-navigation-drawer
+      :drawer.sync="drawer"
+    />
+    <v-main
+      class="pa-0"
+    >
       <nuxt />
     </v-main>
-    <app-footer />
   </v-app>
 </template>
 

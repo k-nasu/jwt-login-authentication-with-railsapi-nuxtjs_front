@@ -1,6 +1,7 @@
 <template>
   <div>
-    {{ $route.fullPath }}
+    <h1>Gantt Chart</h1>
+    <h3>It's on the Road Map!!</h3>
   </div>
 </template>
 
